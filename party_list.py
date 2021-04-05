@@ -50,17 +50,11 @@ for string in playlists:
 
         songs_list.append(track['uri'])
 
+songs_list = list(set(songs_list))
 
-#songs_list = list(set(songs_list))
-print(len(songs_list))
 for string in songs_list:
     track_id = [string]
-    randval = random.random() * 100 
+    randval = random.random()  
 
-    if (randval < 10000/len(songs_list)):
+    if (randval < 100/len(songs_list)):
         sp.user_playlist_add_tracks('poph55', my_playlist.get('id'), track_id)
-
-
-
-
-
